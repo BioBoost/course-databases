@@ -2,14 +2,14 @@
 title: Retrieving Data
 ---
 
-# Databases Introduction
+# Retrieving Data
 
 Chapters:
 
-1) [Retrieving Data](./retrieving/index.md)
-2) [Sorting](./sorting/index.md)
-3) [Filtering](./filtering/index.md)
-4) [Calculated Fields](./calculated-fields/index.md)
-5) [Manipulation](./manipulation/index.md)
-6) [Summarizing](./summarizing/index.md)
-7) [Grouping](./grouping/index.md)
+1. [Retrieving Data](./retrieving/index.md)
+1. [Sorting](./sorting/index.md)
+1. [Filtering](./filtering/index.md)
+1. [Calculated Fields](./calculated-fields/index.md)
+1. [Manipulation](./manipulation/index.md)
+1. [Summarizing](./summarizing/index.md)
+1. [Grouping](./grouping/index.md)
