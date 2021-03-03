@@ -46,8 +46,6 @@ MySQL makes use of three different types of datatypes:
 | DOUBLE\(size,dec\) | A large number with a floating decimal point. |  |  |
 | DECIMAL\(size,d\) | A DOUBLE stored as a string, allowing for a fixed decimal point. |  |  |
 
-Generally, float values are good for scientific Calculations, but should not be used for financial/monetary values. For business oriented math, always use Decimal.
-
 ## Date Types
 
 | Type | Description | Format | Range |
@@ -97,15 +95,31 @@ Here we see the result after doing a SELECT all on the table. You can see that t
 
 ## Storage Space vs Speed
 
-🚧 TODO 🚧
-
-### CHAR vs VARCHAR
-
-🚧 TODO 🚧
+There are two relevant metrics when dealing with data. Storage as measured in the number of bytes required to store the data and speed as measured in seconds required to retrieve data and perform calculations on that data. This becomes especially relevant on large data sets. Selecting the datatype will influence whether the data is optimized for reducing the storage needed, how fast the data can be retrieved or reduce the needed computation time.
 
 ### TINYINT vs BIGINT
 
-🚧 TODO 🚧
+The only difference between TINYINT and BIGINT is the number of bytes used to represent the values. A TINYINT only uses a single byte, while the BIGINT uses 8. If data can be represented in a single byte and BIGINT is used as data type this will lead to a colum which requires 8 times more storage than actually needed.
+
+### CHAR vs VARCHAR
+
+CHAR sets a fixed size for each value in the column, smaller values will be padded with trailing spaces. VARCHAR only stores the bits required to represent the value in the column. Therefore the required storage for VARCHAR is less than CHAR. However, retrieving a specific value in a CHAR column will be faster.
+
+### Floating point vs DECIMAL
+
+There are two representations of decimal numbers in computing. 
+
+Fixed point or DECIMAL, which represents the digits and decimal point as a character. This requires a storage of 4 bits for each digit. Also, when performing calculations multiple rounds are needed to add, substract, multiply or divide these numbers.
+
+Floating point representation, such as FLOAT and DOUBLE, has a fixed storage requirement of 32-bit and 64-bit respectively. Also floating point arithmetic can use specialized hardware, a Floating-Point Unit (FPU), which performs the common arithmetic operations very efficiently. The downside of floating point numbers is that it represents decimal numbers within a margin of error. DOUBLE as it uses more bits, reduces this accuracy error.
+
+:::tip
+
+There are two exceptions of floating point numbers which do not have an accuracy error. An integer represented in a floating number and a decimal number which is an addition of powers of two. For instance 0.5 is 2^-1 or 0.75 which is 2^-1 + 2^-2 can both be represented with their exact value in a floating point number.
+
+:::
+
+As a rule of thumb, floating point values are good for scientific calculations, but should not be used for financial/monetary values. For business oriented math, always use DECIMAL.
 
 ## More information
 
