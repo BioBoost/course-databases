@@ -1,3 +1,0 @@
-# Indexes
-
-🚧 TODO 🚧

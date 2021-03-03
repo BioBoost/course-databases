@@ -8,11 +8,9 @@ layout: courseIntroduction
 
 1. [Databases](chapters/01-databases/index.md)
    1. [Introduction](chapters/01-databases/introduction/index.md)
-   1. [Foreign Keys](chapters/01-databases/foreign-keys/index.md)
-   1. [Datatypes](chapters/01-databases/datatypes/index.md)
-   1. [Indexes](chapters/01-databases/indexes/index.md)
    1. [SQL Language](chapters/01-databases/sql-language/index.md)
    1. [MySQL Client](chapters/01-databases/mysql-client/index.md)
+   1. [Datatypes](chapters/01-databases/datatypes/index.md)
 1. [Data Definition (Tables)](chapters/02-tables/index.md)
 1. [Data Manipulation](chapters/03-data/index.md)
 1. [ER Diagrams](chapters/04-er-diagrams/index.md)
