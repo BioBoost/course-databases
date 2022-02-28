@@ -97,3 +97,7 @@ D | `DROP TABLE` | `DELETE FROM`
 Table 1: CRUD in relation to DDL and DML.
 
 The query statements mentioned above will be explained thoroughly in the next chapters.
+
+:::tip Case
+Although SQL is by default case insensitive, all SQL keywords in this course will be presented as uppercase, while variable names will be in lowercase.
+:::
