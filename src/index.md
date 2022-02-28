@@ -4,6 +4,21 @@ layout: courseIntroduction
 
 # Databases
 
+> This is the databases course for the devbit curriculum based on SQL and MariaDB.
+
+> This course is available under the Creative Commons Attribution-ShareAlike license. Contributions to this course are accepted on [GitHub](https://github.com/pcordemans/course-databases).
+
+## Course goals
+
+Upon completion of this course, one should be able to:
+
+* Set up and maintain a database
+* Build and execute SQL queries
+* Design a normalized database
+* Document a database through an Entity Relationship Diagram
+* Integrate a database in an application
+* Secure a database
+
 ## Chapters
 
 1. [Databases](chapters/01-databases/index.md)
@@ -31,7 +46,3 @@ layout: courseIntroduction
 
 1. [Software installation](exercises/01-software-installation/index.md)
 1. [Setting up example databases](exercises/02-example-databases/index.md)
-
-## Assignments
-
-Under construction
