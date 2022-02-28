@@ -33,7 +33,7 @@ MySQL makes use of three different types of datatypes:
 
 ## Numeric Types
 
-`size` represents the total number of digits and `dec` represents the number of digits to the right of the decimal point.
+`size` represents the total number of digits displayed and `dec` represents the number of digits to the right of the decimal point.
 
 | Type | Description | Signed Range | Unsigned Range |
 | --- | --- | --- | --- |
@@ -81,14 +81,14 @@ VALUES
 We just made a new table using an ENUM for the gender, and a SET for coat color. We use a set for that because a dog can have multiple colors. We also added a weird row with values that do not exist in the ENUM or SET.
 
 ```text
-+----+-------+---------+--------+-------------+
-| id | name  | chip_id | gender | coat_color  |
-+----+-------+---------+--------+-------------+
-|  1 | Toby  |    7865 | male   | brown,beige |
-|  2 | Medoc |    8776 | male   | brown       |
-|  3 | Luna  |    7654 | female | black,white |
-|  4 | Alien |     666 |        |             |
-+----+-------+---------+--------+-------------+
++----+------------+---------+--------+-------------+
+| id | name       | chip_id | gender | coat_color  |
++----+------------+---------+--------+-------------+
+|  1 | Beethoven  |    7865 | male   | brown,beige |
+|  2 | Laika      |    8776 | female | brown       |
+|  3 | Droopy     |    7654 | male   | black,white |
+|  4 | Swami Bami |     666 |        |             |
++----+------------+---------+--------+-------------+
 ```
 
 Here we see the result after doing a SELECT all on the table. You can see that there are multiple values for coat\_color. Also the gender and coat\_color for the 'Alien' dog are blank, the database defaults the value to '' when an non-existent value is inserted, a blank value will take its place.
