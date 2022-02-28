@@ -8,7 +8,7 @@ title: Databases
 
 The word database is used in many ways. For our purpose we will use the following definition:
 
-> A database is a collection of data stored in some organized fashion
+> A database is a collection of data stored in some organized fashion.
 
 You can think of a database as some kind of cabinet. It is simply a physical location to store data, regardless of what data is or how it is stored.
 
@@ -18,9 +18,11 @@ The term `database` does not refer to the database software that is used. This m
 
 The database is the container that is created and can be manipulated using the DBMS. MySQL in this case is a DBMS system, not the physical database.
 
-A database might be a file on a hard drive, but it might not. It is not even significant as you never access a database directly anyway. You always use the DBMS that accesses the database for you.
+A database might be a file on a hard drive, but it could also be stored completely in memory. It is not even significant as you never access a database directly anyway. You always use the DBMS that accesses the database for you.
 
-![Database vs DBMS](./img/dbms.jpg)
+![Database vs DBMS](./img/dbms.png)
+
+Figure 1: Database and DBMS
 
 ## Tables
 
@@ -29,6 +31,8 @@ When storing information in a filing cabinet, you don’t just toss it in a draw
 In the database world, the file is called a table. A table is a _structured file_ that can store data of a specific type. A table may contain a list of customers, a product catalog or any other list of information.
 
 ![Filing cabinet](./img/ficherosclasicoscatalogo.jpg)
+
+Figure 2: Filing cabinet
 
 When using tables in a database, there are some rules that the tables need to apply to. Tables that do not fit the following description cannot be stored inside a database, and need to be reorganized.
 
@@ -41,9 +45,9 @@ When using tables in a database, there are some rules that the tables need to ap
 - Order of rows is not important
 - No two rows may be identical
 
-The key is that data stored in a table is of _one type_ of data or a list. You should never store a list of customers and a list of orders in the same database table. Technically it is possible, but it would make retrieving information and access very difficult.
+The key is that data stored in a table is of _one type_ of data or a list. You should never store a list of customers and a list of orders in the same database table. Technically it is possible, but it would make retrieving information and access very difficult. A better solution is to create two tables for each list. 
 
-A better solution is to create two tables for each list Every table in a database has a name that identifies it. The name is always unique for a given database.
+Every table in a database has a name that identifies it. The name is always unique for a given database.
 
 **Customers table**:
 
@@ -52,6 +56,8 @@ A better solution is to create two tables for each list Every table in a databas
 |  |  |  |  |  |
 |  |  |  |  |  |
 |  |  |  |  |  |
+
+Table 1: An example Customers table
 
 ### Schema's
 
@@ -66,11 +72,13 @@ Tables have characteristics and properties that define how data is stored in the
 
 Tables are made up of columns. Columns contain a particular piece of information within the table. You can envision database tables as grids \(like spreadsheets\). Each column on the grid contains a particular piece of information.
 
-Each column in a database has an associated **datatype**. It defines what the type the data the column can contain
+Each column in a database has an associated **datatype**. It defines what the type the data the column can contain.
 
 Eg: Numeric, date, text, currency,…
 
+:::tip
 Datatypes are very important for a database. They restrict the type of data that can be stored in the column, preventing wrong information to be stored. It can also help sorting the data correctly and efficiently. They play an important role in optimizing disk usage.
+:::
 
 ### Rows
 
@@ -82,24 +90,28 @@ The number of rows in the table is the number of records in it. _Record_ and _ro
 
 ### Primary keys
 
-> No two rows may be identical
+:::warning Rule
+Rows may not be identical to eachother.
+:::
 
 Every row in a table must have a column \(or set of columns\) that uniquely identifies it. These column or set of columns are called the primary key. The primary key is used to refer to a specific row.
 
 Without a primary key updating or deleting specific rows in a table becomes extremely difficult. There is no guaranteed safe way to refer to just the rows to be affected.
 
-_Always define primary keys !_
+:::warning Great advice
+Always define primary keys!
+:::
 
 Primary keys are not required, but defining them makes future data manipulation is possible and manageable.
-
-A primary key consisting out of multiple columns is also called a composite key.
 
 Any column can be selected as the primary key as long as it meets the following conditions:
 
 1. No two rows can have the same primary key value \(unique\)
 2. Every row must have a primary key value \(NULL is not allowed\)
 
-These rules are enforced by the MySQL. When multiple columns are used, the same rules apply to all columns that make up the primary key. Individual columns need not to have unique values, but the whole key must be unique.
+These rules are enforced by MySQL.
+
+A primary key might consist of multiple columns. Then it is also called a composite key. When multiple columns are used, the same rules apply to all columns that make up the primary key. Individual columns do need not to have unique values, but the whole key combined must be unique.
 
 #### Primary key best practices
 
